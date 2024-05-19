@@ -33,7 +33,10 @@ namespace WindowsFormsSafe
             this.departmentTableAdapter.Fill(this.universityHRDataSet.department);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "universityHRDataSet.employee". При необходимости она может быть перемещена или удалена.
             this.employeeTableAdapter.Fill(this.universityHRDataSet.employee);
-
+            //for (int i = 0; i < dataGridView1.Columns.Count; i++)
+            //{
+            //    dataGridView1.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            //}
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -66,9 +69,9 @@ namespace WindowsFormsSafe
 
         private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-            sda = new SqlDataAdapter("select * from department", myConnection);
-            var dtDep = new DataTable();
-            sda.Fill(dtDep);
+            //sda = new SqlDataAdapter("select * from department", myConnection);
+            //var dtDep = new DataTable();
+            //sda.Fill(dtDep);
 
 
             //DataGridViewComboBoxColumn colFilterType = new DataGridViewComboBoxColumn();
@@ -80,21 +83,31 @@ namespace WindowsFormsSafe
             //colFilterType.ValueType = typeof(int);
             //dataGridView1.Columns.Add(colFilterType);
 
-            foreach (DataGridViewRow row in dataGridView1.Rows)
-            {
-                if (!row.IsNewRow)
-                {
+            //foreach (DataGridViewRow row in dataGridView1.Rows)
+            //{
+            //    if (!row.IsNewRow)
+            //    {
 
 
-                    DataGridViewComboBoxCell comboBoxCell = new DataGridViewComboBoxCell();
-                    comboBoxCell.DataSource = dtDep; // Установите DataSource вашего DataTable
-                    comboBoxCell.ValueMember = "id"; // Укажите колонку, которая будет использоваться для Value
-                    comboBoxCell.DisplayMember = "name"; // Укажите колонку, которая будет отображаться в комбобоксе
-                    row.Cells[8] = comboBoxCell;
-                    //comboBoxCell.ReadOnly = true;
+            //        DataGridViewComboBoxCell comboBoxCell = new DataGridViewComboBoxCell();
+            //        comboBoxCell.DataSource = dtDep; // Установите DataSource вашего DataTable
+            //        comboBoxCell.ValueMember = "id"; // Укажите колонку, которая будет использоваться для Value
+            //        comboBoxCell.DisplayMember = "name"; // Укажите колонку, которая будет отображаться в комбобоксе
+            //        row.Cells[8] = comboBoxCell;
+            //        //comboBoxCell.ReadOnly = true;
 
-                }
-            }
+            //    }
+            //}
+        }
+
+        private void bindingNavigator1_RefreshItems(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
