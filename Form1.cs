@@ -37,13 +37,44 @@ namespace WindowsFormsSafe
 
         private void сотрудникиДисциплиныToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            var myForm7 = new FormEmployeeDiscipline();
+            myForm7.Show();
         }
 
         private void сотрудникиToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form2 myForm2 = new Form2();
             myForm2.Show();
+        }
+
+        private void документыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormDocument myForm3 = new FormDocument();
+            myForm3.Show();
+        }
+
+        private void кафедрыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormDepartment myForm4 = new FormDepartment();
+            myForm4.Show();
+        }
+
+        private void дисциплиныToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormDiscipline myForm5 = new FormDiscipline();
+            myForm5.Show();
+        }
+
+        private void отпускаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var myForm6 = new FormVocation();
+            myForm6.Show();
+        }
+
+        private void госНаградыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var myForm8 = new FormGovernentawards();
+            myForm8.Show();
         }
     }
 }

@@ -109,5 +109,12 @@ namespace WindowsFormsSafe
         {
 
         }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.employeeBindingSource.EndEdit();
+            this.employeeTableAdapter.Update(this.universityHRDataSet.employee);
+        }
     }
 }

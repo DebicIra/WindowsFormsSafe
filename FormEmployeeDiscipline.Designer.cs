@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsSafe
 {
-    partial class Form2
+    partial class FormEmployeeDiscipline
     {
         /// <summary>
         /// Required designer variable.
@@ -29,23 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.fullnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.birthdayDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gradeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.degreeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.workloadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.postDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.workExperienceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.departmentIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.universityHRDataSet = new WindowsFormsSafe.UniversityHRDataSet();
-            this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.employeeTableAdapter = new WindowsFormsSafe.UniversityHRDataSetTableAdapters.employeeTableAdapter();
-            this.departmentTableAdapter = new WindowsFormsSafe.UniversityHRDataSetTableAdapters.departmentTableAdapter();
-            this.fontDialog1 = new System.Windows.Forms.FontDialog();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEmployeeDiscipline));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.employeeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.universityHRDataSet = new WindowsFormsSafe.UniversityHRDataSet();
+            this.disciplineIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.disciplineBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.employeeDisciplineBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -59,14 +51,33 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.universityHRDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
+            this.employeeDisciplineTableAdapter = new WindowsFormsSafe.UniversityHRDataSetTableAdapters.employeeDisciplineTableAdapter();
+            this.employeeTableAdapter = new WindowsFormsSafe.UniversityHRDataSetTableAdapters.employeeTableAdapter();
+            this.disciplineTableAdapter = new WindowsFormsSafe.UniversityHRDataSetTableAdapters.disciplineTableAdapter();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.universityHRDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.disciplineBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeDisciplineBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.bindingNavigator1, 0, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 450);
+            this.tableLayoutPanel1.TabIndex = 0;
             // 
             // dataGridView1
             // 
@@ -74,118 +85,61 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.fullnameDataGridViewTextBoxColumn,
-            this.birthdayDateDataGridViewTextBoxColumn,
-            this.gradeDataGridViewTextBoxColumn,
-            this.degreeDataGridViewTextBoxColumn,
-            this.workloadDataGridViewTextBoxColumn,
-            this.postDataGridViewTextBoxColumn,
-            this.workExperienceDataGridViewTextBoxColumn,
-            this.departmentIdDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.employeeBindingSource;
+            this.employeeIdDataGridViewTextBoxColumn,
+            this.disciplineIdDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.employeeDisciplineBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(962, 389);
+            this.dataGridView1.Size = new System.Drawing.Size(794, 414);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
             // 
-            // fullnameDataGridViewTextBoxColumn
+            // employeeIdDataGridViewTextBoxColumn
             // 
-            this.fullnameDataGridViewTextBoxColumn.DataPropertyName = "fullname";
-            this.fullnameDataGridViewTextBoxColumn.HeaderText = "ФИО";
-            this.fullnameDataGridViewTextBoxColumn.Name = "fullnameDataGridViewTextBoxColumn";
-            // 
-            // birthdayDateDataGridViewTextBoxColumn
-            // 
-            this.birthdayDateDataGridViewTextBoxColumn.DataPropertyName = "birthdayDate";
-            this.birthdayDateDataGridViewTextBoxColumn.HeaderText = "Дата рождения";
-            this.birthdayDateDataGridViewTextBoxColumn.Name = "birthdayDateDataGridViewTextBoxColumn";
-            // 
-            // gradeDataGridViewTextBoxColumn
-            // 
-            this.gradeDataGridViewTextBoxColumn.DataPropertyName = "grade";
-            this.gradeDataGridViewTextBoxColumn.HeaderText = "Звание";
-            this.gradeDataGridViewTextBoxColumn.Name = "gradeDataGridViewTextBoxColumn";
-            // 
-            // degreeDataGridViewTextBoxColumn
-            // 
-            this.degreeDataGridViewTextBoxColumn.DataPropertyName = "degree";
-            this.degreeDataGridViewTextBoxColumn.HeaderText = "Степень";
-            this.degreeDataGridViewTextBoxColumn.Name = "degreeDataGridViewTextBoxColumn";
-            // 
-            // workloadDataGridViewTextBoxColumn
-            // 
-            this.workloadDataGridViewTextBoxColumn.DataPropertyName = "workload";
-            this.workloadDataGridViewTextBoxColumn.HeaderText = "Нагрузка";
-            this.workloadDataGridViewTextBoxColumn.Name = "workloadDataGridViewTextBoxColumn";
-            // 
-            // postDataGridViewTextBoxColumn
-            // 
-            this.postDataGridViewTextBoxColumn.DataPropertyName = "post";
-            this.postDataGridViewTextBoxColumn.HeaderText = "Должность";
-            this.postDataGridViewTextBoxColumn.Name = "postDataGridViewTextBoxColumn";
-            // 
-            // workExperienceDataGridViewTextBoxColumn
-            // 
-            this.workExperienceDataGridViewTextBoxColumn.DataPropertyName = "workExperience";
-            this.workExperienceDataGridViewTextBoxColumn.HeaderText = "Стаж";
-            this.workExperienceDataGridViewTextBoxColumn.Name = "workExperienceDataGridViewTextBoxColumn";
-            // 
-            // departmentIdDataGridViewTextBoxColumn
-            // 
-            this.departmentIdDataGridViewTextBoxColumn.DataPropertyName = "departmentId";
-            this.departmentIdDataGridViewTextBoxColumn.DataSource = this.departmentBindingSource;
-            this.departmentIdDataGridViewTextBoxColumn.DisplayMember = "name";
-            this.departmentIdDataGridViewTextBoxColumn.HeaderText = "Кафедра";
-            this.departmentIdDataGridViewTextBoxColumn.Name = "departmentIdDataGridViewTextBoxColumn";
-            this.departmentIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.departmentIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.departmentIdDataGridViewTextBoxColumn.ValueMember = "id";
-            // 
-            // departmentBindingSource
-            // 
-            this.departmentBindingSource.DataMember = "department";
-            this.departmentBindingSource.DataSource = this.universityHRDataSet;
-            // 
-            // universityHRDataSet
-            // 
-            this.universityHRDataSet.DataSetName = "UniversityHRDataSet";
-            this.universityHRDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.employeeIdDataGridViewTextBoxColumn.DataPropertyName = "employeeId";
+            this.employeeIdDataGridViewTextBoxColumn.DataSource = this.employeeBindingSource;
+            this.employeeIdDataGridViewTextBoxColumn.DisplayMember = "fullname";
+            this.employeeIdDataGridViewTextBoxColumn.HeaderText = "Сотрудник";
+            this.employeeIdDataGridViewTextBoxColumn.Name = "employeeIdDataGridViewTextBoxColumn";
+            this.employeeIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.employeeIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.employeeIdDataGridViewTextBoxColumn.ValueMember = "id";
             // 
             // employeeBindingSource
             // 
             this.employeeBindingSource.DataMember = "employee";
             this.employeeBindingSource.DataSource = this.universityHRDataSet;
             // 
-            // employeeTableAdapter
+            // universityHRDataSet
             // 
-            this.employeeTableAdapter.ClearBeforeFill = true;
+            this.universityHRDataSet.DataSetName = "UniversityHRDataSet";
+            this.universityHRDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // departmentTableAdapter
+            // disciplineIdDataGridViewTextBoxColumn
             // 
-            this.departmentTableAdapter.ClearBeforeFill = true;
+            this.disciplineIdDataGridViewTextBoxColumn.DataPropertyName = "disciplineId";
+            this.disciplineIdDataGridViewTextBoxColumn.DataSource = this.disciplineBindingSource;
+            this.disciplineIdDataGridViewTextBoxColumn.DisplayMember = "name";
+            this.disciplineIdDataGridViewTextBoxColumn.HeaderText = "Дисциплина";
+            this.disciplineIdDataGridViewTextBoxColumn.Name = "disciplineIdDataGridViewTextBoxColumn";
+            this.disciplineIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.disciplineIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.disciplineIdDataGridViewTextBoxColumn.ValueMember = "id";
             // 
-            // tableLayoutPanel1
+            // disciplineBindingSource
             // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.bindingNavigator1, 0, 1);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 92.72301F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.276995F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(968, 426);
-            this.tableLayoutPanel1.TabIndex = 1;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            this.disciplineBindingSource.DataMember = "discipline";
+            this.disciplineBindingSource.DataSource = this.universityHRDataSet;
+            // 
+            // employeeDisciplineBindingSource
+            // 
+            this.employeeDisciplineBindingSource.DataMember = "employeeDiscipline";
+            this.employeeDisciplineBindingSource.DataSource = this.universityHRDataSet;
             // 
             // bindingNavigator1
             // 
             this.bindingNavigator1.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.bindingNavigator1.BindingSource = this.employeeBindingSource;
+            this.bindingNavigator1.BindingSource = this.employeeDisciplineBindingSource;
             this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem;
             this.bindingNavigator1.DeleteItem = this.bindingNavigatorDeleteItem;
             this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -201,14 +155,14 @@
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
             this.toolStripButton1});
-            this.bindingNavigator1.Location = new System.Drawing.Point(0, 395);
+            this.bindingNavigator1.Location = new System.Drawing.Point(0, 420);
             this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.bindingNavigator1.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator1.Size = new System.Drawing.Size(968, 25);
+            this.bindingNavigator1.Size = new System.Drawing.Size(800, 25);
             this.bindingNavigator1.TabIndex = 1;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
@@ -304,24 +258,37 @@
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "Сохранить";
+            this.toolStripButton1.Text = "toolStripButton1";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
-            // Form2
+            // employeeDisciplineTableAdapter
+            // 
+            this.employeeDisciplineTableAdapter.ClearBeforeFill = true;
+            // 
+            // employeeTableAdapter
+            // 
+            this.employeeTableAdapter.ClearBeforeFill = true;
+            // 
+            // disciplineTableAdapter
+            // 
+            this.disciplineTableAdapter.ClearBeforeFill = true;
+            // 
+            // FormEmployeeDiscipline
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(968, 426);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "Form2";
-            this.Text = "Сотрудники";
-            this.Load += new System.EventHandler(this.Form2_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.universityHRDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
+            this.Name = "FormEmployeeDiscipline";
+            this.Text = "FormEmployeeDiscipline";
+            this.Load += new System.EventHandler(this.FormEmployeeDiscipline_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.universityHRDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.disciplineBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeDisciplineBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
@@ -331,14 +298,11 @@
 
         #endregion
 
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private UniversityHRDataSet universityHRDataSet;
-        private System.Windows.Forms.BindingSource employeeBindingSource;
-        private UniversityHRDataSetTableAdapters.employeeTableAdapter employeeTableAdapter;
-        private System.Windows.Forms.BindingSource departmentBindingSource;
-        private UniversityHRDataSetTableAdapters.departmentTableAdapter departmentTableAdapter;
-        private System.Windows.Forms.FontDialog fontDialog1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.BindingSource employeeDisciplineBindingSource;
+        private UniversityHRDataSetTableAdapters.employeeDisciplineTableAdapter employeeDisciplineTableAdapter;
         private System.Windows.Forms.BindingNavigator bindingNavigator1;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
@@ -351,14 +315,12 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fullnameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn birthdayDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gradeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn degreeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn workloadDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn postDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn workExperienceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn departmentIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.BindingSource employeeBindingSource;
+        private UniversityHRDataSetTableAdapters.employeeTableAdapter employeeTableAdapter;
+        private System.Windows.Forms.BindingSource disciplineBindingSource;
+        private UniversityHRDataSetTableAdapters.disciplineTableAdapter disciplineTableAdapter;
+        private System.Windows.Forms.DataGridViewComboBoxColumn employeeIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn disciplineIdDataGridViewTextBoxColumn;
     }
 }
