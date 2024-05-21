@@ -219,6 +219,7 @@
             this.работаСХранимымиПроцедурамиToolStripMenuItem.Name = "работаСХранимымиПроцедурамиToolStripMenuItem";
             this.работаСХранимымиПроцедурамиToolStripMenuItem.Size = new System.Drawing.Size(214, 20);
             this.работаСХранимымиПроцедурамиToolStripMenuItem.Text = "Работа с хранимыми процедурами";
+            this.работаСХранимымиПроцедурамиToolStripMenuItem.Click += new System.EventHandler(this.работаСХранимымиПроцедурамиToolStripMenuItem_Click);
             // 
             // Form1
             // 

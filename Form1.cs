@@ -76,5 +76,12 @@ namespace WindowsFormsSafe
             var myForm8 = new FormGovernentawards();
             myForm8.Show();
         }
+
+
+        private void работаСХранимымиПроцедурамиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var myForm9 = new professorDepartmentProc();
+            myForm9.Show();
+        }
     }
 }
