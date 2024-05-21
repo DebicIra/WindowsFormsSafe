@@ -22,5 +22,22 @@ namespace WindowsFormsSafe
             this.departmentTableAdapter.Fill(this.universityHRDataSet.department);
 
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            int i = this.departmentBindingSource.Find("name", textBox1.Text);
+            if (i == -1)
+            {
+                DataView dv = new DataView(this.universityHRDataSet.department as DataTable);
+                dv.RowFilter = string.Format("name LIKE '{0}*'", this.textBox1.Text);
+                if (dv.Count != 0)
+                {
+                    i = this.departmentBindingSource.Find("name", dv[0]["name"]);
+                }
+                dv.Dispose();
+                this.departmentBindingSource.Position = i;
+            }
+            this.departmentBindingSource.Position = i;
+        }
     }
 }

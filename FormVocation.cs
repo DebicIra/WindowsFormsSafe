@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace WindowsFormsSafe
 {
@@ -30,6 +31,16 @@ namespace WindowsFormsSafe
             this.Validate();
             this.vacationBindingSource.EndEdit();
             this.vacationTableAdapter.Update(this.universityHRDataSet.vacation);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.vacationBindingSource.Filter = "vacationEndDate='" + textBox1.Text + "'";
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.vacationBindingSource.Filter = "";
         }
     }
 }
