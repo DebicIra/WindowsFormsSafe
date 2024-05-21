@@ -116,5 +116,60 @@ namespace WindowsFormsSafe
             this.employeeBindingSource.EndEdit();
             this.employeeTableAdapter.Update(this.universityHRDataSet.employee);
         }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+            int i = this.employeeBindingSource.Find("fullname", textBox1.Text);
+            if (i == -1)
+            {
+                DataView dv = new DataView(this.universityHRDataSet.employee as DataTable);
+                dv.RowFilter = string.Format("fullname LIKE '{0}*'", this.textBox1.Text);
+                if (dv.Count != 0)
+                {
+                    i = this.employeeBindingSource.Find("fullname", dv[0]["fullname"]);
+                }
+                dv.Dispose();
+                this.employeeBindingSource.Position = i;
+            }
+            this.employeeBindingSource.Position = i;
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.employeeBindingSource.Filter = "degree='" + textBox2.Text + "'";
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            this.employeeBindingSource.Filter = "";
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        public void RemoveText(object sender, EventArgs e)
+        {
+            if (textBox2.Text == "Фильтр по степени")
+            {
+                textBox2.Text = "";
+            }
+        }
+
+        public void AddText(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBox2.Text))
+                textBox2.Text = "Фильтр по степени";
+        }
+
+        private void textBox2_Enter(object sender, EventArgs e)
+        {
+            RemoveText(sender, e);
+        }
+
+        private void textBox2_Leave(object sender, EventArgs e)
+        {
+            AddText(sender, e);
+        }
     }
 }
