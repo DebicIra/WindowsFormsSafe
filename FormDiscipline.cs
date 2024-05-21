@@ -29,5 +29,22 @@ namespace WindowsFormsSafe
             this.disciplineBindingSource.EndEdit();
             this.disciplineTableAdapter.Update(this.universityHRDataSet.discipline);
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            int i = this.disciplineBindingSource.Find("name", textBox1.Text);
+            if (i == -1)
+            {
+                DataView dv = new DataView(this.universityHRDataSet.discipline as DataTable);
+                dv.RowFilter = string.Format("name LIKE '{0}*'", this.textBox1.Text);
+                if (dv.Count != 0)
+                {
+                    i = this.disciplineBindingSource.Find("name", dv[0]["name"]);
+                }
+                dv.Dispose();
+                this.disciplineBindingSource.Position = i;
+            }
+            this.disciplineBindingSource.Position = i;
+        }
     }
 }
