@@ -1,8 +1,13 @@
-﻿using System;
+﻿using CrystalDecisions.ReportAppServer.DataDefModel;
+using FastReport;
+using FastReport.Data;
+using FastReport.Utils;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -13,9 +18,14 @@ namespace WindowsFormsSafe
     {
         public Form1()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
-
+        private void employeeReport()
+        {
+            //report1.Design();            
+            report1.Load(Directory.GetParent(Environment.CurrentDirectory).Parent.FullName + "/Content/reports/" + "employee.frx");
+            report1.Show();
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "universityHRDataSet.vacation". При необходимости она может быть перемещена или удалена.
@@ -82,6 +92,22 @@ namespace WindowsFormsSafe
         {
             var myForm9 = new professorDepartmentProc();
             myForm9.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            employeeReport();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            report1.Load(Directory.GetParent(Environment.CurrentDirectory).Parent.FullName + "/Content/reports/" + "employee.frx");
+            FastReport.Export.OoXML.Excel2007Export export = new FastReport.Export.OoXML.Excel2007Export();
+            using (export)
+            {
+                if (export.ShowDialog())
+                    export.Export(report1, @"result.xlsx");
+            }
         }
     }
 }

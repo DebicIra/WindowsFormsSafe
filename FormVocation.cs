@@ -42,5 +42,10 @@ namespace WindowsFormsSafe
         {
             this.vacationBindingSource.Filter = "";
         }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            dgvTransformer.ExportToExcel(dataGridView1);
+        }
     }
 }

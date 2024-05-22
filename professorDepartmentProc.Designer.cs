@@ -73,6 +73,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.universityHRDataSet1 = new WindowsFormsSafe.UniversityHRDataSet();
             this.departmentTableAdapter1 = new WindowsFormsSafe.UniversityHRDataSetTableAdapters.departmentTableAdapter();
+            this.button8 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel12.SuspendLayout();
@@ -120,7 +121,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(413, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(698, 687);
+            this.dataGridView1.Size = new System.Drawing.Size(698, 650);
             this.dataGridView1.TabIndex = 3;
             // 
             // label1
@@ -636,12 +637,23 @@
             // 
             this.departmentTableAdapter1.ClearBeforeFill = true;
             // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(932, 668);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(179, 24);
+            this.button8.TabIndex = 6;
+            this.button8.Text = "Excel Export";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
             // professorDepartmentProc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1122, 711);
+            this.Controls.Add(this.button8);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.dataGridView1);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
@@ -732,5 +744,6 @@
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
     }
 }

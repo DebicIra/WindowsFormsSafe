@@ -184,5 +184,10 @@ namespace WindowsFormsSafe
                 textBox.ForeColor = Color.Black;
             }
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            dgvTransformer.ExportToExcel(dataGridView1);
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClosedXML.Report;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -6,6 +7,10 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using sd = System.Data;
+using Excel = Microsoft.Office.Interop.Excel;
+using Microsoft.Office.Interop.Excel;
+using System.IO;
 
 namespace WindowsFormsSafe
 {
@@ -37,7 +42,7 @@ namespace WindowsFormsSafe
             int i = this.documentBindingSource.Find("type", textBox1.Text);
             if (i == -1)
             {
-                DataView dv = new DataView(this.universityHRDataSet.document as DataTable);
+                DataView dv = new DataView(this.universityHRDataSet.document as sd.DataTable);
                 dv.RowFilter = string.Format("type LIKE '{0}*'", this.textBox1.Text);
                 if (dv.Count != 0)
                 {
@@ -58,5 +63,13 @@ namespace WindowsFormsSafe
         {
             this.documentBindingSource.Filter = "";
         }
+
+       
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            dgvTransformer.ExportToExcel(dataGridView1);
+        }
+        
     }
 }

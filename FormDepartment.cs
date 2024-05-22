@@ -39,5 +39,10 @@ namespace WindowsFormsSafe
             }
             this.departmentBindingSource.Position = i;
         }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            dgvTransformer.ExportToExcel(dataGridView1);
+        }
     }
 }
