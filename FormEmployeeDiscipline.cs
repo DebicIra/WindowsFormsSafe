@@ -33,5 +33,10 @@ namespace WindowsFormsSafe
             this.employeeDisciplineBindingSource.EndEdit();
             this.employeeDisciplineTableAdapter.Update(this.universityHRDataSet.employeeDiscipline);
         }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            dgvTransformer.ExportToExcel(dataGridView1);
+        }
     }
 }

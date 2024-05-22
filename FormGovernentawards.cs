@@ -58,5 +58,10 @@ namespace WindowsFormsSafe
         {
             this.governmentAwardsBindingSource.Filter = "";
         }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            dgvTransformer.ExportToExcel(dataGridView1);
+        }
     }
 }
